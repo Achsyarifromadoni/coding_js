@@ -1,67 +1,61 @@
-document.getElementById("kmenu").onkeyup = function(){
-    let txtnama = document.getElementById("kmenu").value;
-    let txtnama2 = txtnama.toUpperCase();
-    document.getElementById("kmenu").value = txtnama2;
-};
-
-document.getElementById("global1").onload = function(){
+document.getElementById("cra").onload = function(){
     let today = new Date();
-    let dd = String(today.getDate());
-    let yy = today.getFullYear();
-    let tgl;
-
-    today = dd + yy;
-    tgl = document.getElementById('kode').value = "INV" + today + "001";
+    let tanggalll = String(kode.getDate());
+    let tahunnn = today.getFullYear();
+    let hri;
+    Ya = tanggalll + tahunnn
+    hri = document.getElementById("Invoice").value = "INV" + Ya + "001";
 };
 
-document.getElementById("btn").onclick = function(){
-    let menu = document.getElementById('kmenu').value;
+document.getElementById("kd").onchange = function (){
+    let nama = document.getElementById("kd").value;
+    let nama2 = nama.toUpperCase();
+    document.getElementById("kd").value = nama2;
+}
 
-    let nama = document.getElementById('nmenu').value;
+document.getElementById("Ordernya").onclick = function () {
+    let kode = document.getElementById("kd").value;
+    let menu = document.getElementById("menu").value;
+    let jenis;
+    if (document.getElementById("makanan").checked == true) {
+        jenis = document.getElementById("makanan").value;
+    }
+    if (document.getElementById("minuman").checked == true) {
+        jenis = document.getElementById("minuman").value;
+    }
+    if (document.getElementById("snack").checked == true) {
+        jenis = document.getElementById("snack").value;
+    }
+    let harga = document.getElementById("berempah").value;
+    
+    let jumlah = document.getElementById("beli").value;
 
     combobox();
-    
-    let jb = document.getElementById('jb').value;
 
-    let pembayaran;
-        if(document.getElementById("tn").checked == true){
-            pembayaran = "Tunai"};
-        if(document.getElementById("ntn").checked == true){
-            pembayaran = "Non-Tunai"};
+    let brp = document.getElementById("Beli").value
 
-    let harga = document.getElementById('harga').value;
+    let bayar;
+        if (document.getElementById("cashh").checked == true) {
+        bayar = "cashh";
+    };
+        if (document.getElementById("non").checked == true) {
+        bayar = "non";
+    };
     
-    total(jb,harga); 
-            
-    document.getElementById('data1').innerHTML = menu;
-    document.getElementById('data2').innerHTML = nama;
-    document.getElementById('data4').innerHTML = jb
-    document.getElementById('data7').innerHTML = pembayaran;
+    let baraang = document.getElementById("berempah").value;
+
+    Total(brp,)
+
+// let datakanan = "";
+// datakanan += ;
+
 }
-function combobox(){
-    let jenis = document.getElementById('form1').jm.value;
-        if(jenis ==  "Makanan"){
-            document.getElementById('data3').innerHTML="Makanan";
-        }
-        if(jenis == "Minuman"){
-            document.getElementById('data3').innerHTML="Minuman";
-        }
-        else if(jenis == "Snack"){
-            document.getElementById('data3').innerHTML="Snack";
-        }
-}
-function total(jb,harga){ 
-    let diskon;  
-    if(jb > 10){
-        diskon = document.getElementById('data5').innerHTML = "2%"
-    } 
-    if(diskon == "2%"){
-        let first = (jb*harga)*2/100;
-        let sc = (jb*harga)-first;
-        document.getElementById('data6').innerHTML = sc;
-    }
-    else{
-        first = (jb*harga);
-        document.getElementById('data6').innerHTML = first;
-    }
-}
+
+
+
+
+
+
+// window.onload = function (){
+//     cekdata();
+// }
